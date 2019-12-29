@@ -1,13 +1,10 @@
-#include <deprecated.h>
 #include <MFRC522.h>
-#include <MFRC522Extended.h>
-#include <require_cpp11.h>
 #include <SPI.h>
 
 #define SS_PIN 10
 #define RST_PIN 9
 //Isikan dengan UID dari tag yang ada
-String cardID = "xx xx xx xx"
+String cardID = "D0 A9 B1 4C";
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 
 void setup() {
@@ -36,8 +33,8 @@ void loop() {
   {
     Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
     Serial.print(mfrc522.uid.uidByte[i], HEX);
-    content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
-    content.concat(String(mfrc522.uid.uidByte[i], HEX);
+    content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " "));
+    content.concat(String(mfrc522.uid.uidByte[i], HEX));
   }
   Serial.println();
   Serial.print("Pesan :");
